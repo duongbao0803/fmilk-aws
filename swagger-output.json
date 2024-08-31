@@ -7,7 +7,7 @@
   },
   "host": "18.142.49.114",
   "basePath": "/api/v1",
-  "schemes": ["http"],
+  "schemes": ["https"],
   "securityDefinitions": {
     "BearerAuth": {
       "type": "apiKey",
