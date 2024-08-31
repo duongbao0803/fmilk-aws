@@ -1,25 +1,25 @@
-const { promisify } = require("util");
-const redis = require("redis");
-const dotenv = require("dotenv");
+// const { promisify } = require("util");
+// const redis = require("redis");
+// const dotenv = require("dotenv");
 
-dotenv.config();
+// dotenv.config();
 
-const redisClient = redis.createClient({
-  host: "127.0.0.1",
-  port: 6379,
-});
+// const redisClient = redis.createClient({
+//   host: "127.0.0.1",
+//   port: 6379,
+// });
 
-const getAsync = promisify(redisClient.get).bind(redisClient);
-const setexAsync = promisify(redisClient.setex).bind(redisClient);
-const delAsync = promisify(redisClient.del).bind(redisClient);
-const keysAsync = promisify(redisClient.keys).bind(redisClient);
+// const getAsync = promisify(redisClient.get).bind(redisClient);
+// const setexAsync = promisify(redisClient.setex).bind(redisClient);
+// const delAsync = promisify(redisClient.del).bind(redisClient);
+// const keysAsync = promisify(redisClient.keys).bind(redisClient);
 
-redisClient.on("connect", () => {
-  console.log("Connected to redis");
-});
+// redisClient.on("connect", () => {
+//   console.log("Connected to redis");
+// });
 
-redisClient.on("error", (err) => {
-  console.error("Err", err);
-});
+// redisClient.on("error", (err) => {
+//   console.error("Err", err);
+// });
 
-module.exports = { redisClient, getAsync, setexAsync, delAsync, keysAsync };
+// module.exports = { redisClient, getAsync, setexAsync, delAsync, keysAsync };
