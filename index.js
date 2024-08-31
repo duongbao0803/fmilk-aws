@@ -25,6 +25,6 @@ scheduleCron();
 
 app.use("/api/v1", routes);
 
-app.listen(8000, () => {
+app.listen(80, () => {
   console.log("Server is running");
 });
