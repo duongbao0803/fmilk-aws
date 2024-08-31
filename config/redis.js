@@ -5,7 +5,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const redisClient = redis.createClient({
-  url: "redis://red-cr5jo03tq21c73b4prqg:6379",
+  host: "localhost",
+  port: 6379,
 });
 
 const getAsync = promisify(redisClient.get).bind(redisClient);
